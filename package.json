@@ -1,0 +1,27 @@
+{
+  "name": "tracklytics",
+  "version": "1.0.0",
+  "description": "Tracklytics is a web application designed to help athletes track their cycling and running workouts, analyze performance data, and optimize training plans. This project aims to provide a simple and effective way to visualize training metrics and improve athletic performance.",
+  "main": "index.js",
+  "scripts": {
+  "start": "node server.js",
+  "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rewwea/Tracklytics.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rewwea/Tracklytics/issues"
+  },
+  "homepage": "https://github.com/rewwea/Tracklytics#readme",
+  "dependencies": {
+    "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
+}
