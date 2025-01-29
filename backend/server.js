@@ -1,12 +1,16 @@
 const express = require("express");
+const workoutRoutes = require("./routes/workoutRoutes");
 
 const app = express();
 
-app.get("/", (req, res) => {
-    res.send("Tracklytics API is running...");
-});
+// Middleware для парсинга JSON
+app.use(express.json());
 
-const PORT = 5005;
+// Маршруты
+app.use("/api/workouts", workoutRoutes);
+
+// Запуск сервера
+const PORT = process.env.PORT || 5005;
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
 });
