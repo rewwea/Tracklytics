@@ -92,3 +92,6 @@ desktop.ini
 *.backup
 *.orig
 *.rej
+
+
+doc/

@@ -3,7 +3,9 @@ const prisma = require("../models/prismaClient");
 // Получить все тренировки
 exports.getAllWorkouts = async (req, res) => {
     try {
-        const workouts = await prisma.workout.findMany();
+        const workouts = await prisma.workout.findMany({
+            where: { userId: req.userId },
+        });
         res.json(workouts);
     } catch (error) {
         res.status(500).json({ message: "Server error" });
@@ -22,6 +24,7 @@ exports.createWorkout = async (req, res) => {
                 distance,
                 averageHeartRate,
                 averagePower,
+                userId: req.userId, // <--- ключевой момент
             },
         });
         res.status(201).json(workout);

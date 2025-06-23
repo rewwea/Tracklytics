@@ -8,19 +8,13 @@ const {
     deleteWorkout,
 } = require("../controllers/workoutController");
 
-// Получить все тренировки
-router.get("/", getAllWorkouts);
+const auth = require("../middleware/authMiddleware");
 
-// Создать новую тренировку
-router.post("/", createWorkout);
-
-// Получить одну тренировку по ID
-router.get("/:id", getWorkoutById);
-
-// Обновить тренировку
-router.put("/:id", updateWorkout);
-
-// Удалить тренировку
-router.delete("/:id", deleteWorkout);
+// Все маршруты защищены авторизацией
+router.get("/", auth, getAllWorkouts);
+router.post("/", auth, createWorkout);
+router.get("/:id", auth, getWorkoutById);
+router.put("/:id", auth, updateWorkout);
+router.delete("/:id", auth, deleteWorkout);
 
 module.exports = router;
